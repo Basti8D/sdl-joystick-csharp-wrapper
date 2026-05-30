@@ -7,11 +7,14 @@ namespace sdl_wrapper_test
 
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
             List<Joystick> joysticks;
             joysticks = new List<Joystick>();
             Joystick.InitJoystickSystem();
             int count = Joystick.GetJoystickCount();
-            Console.WriteLine($"Count: {count}");
+            Console.SetCursorPosition(78, 0);
+            Console.Write($"Count: {count}");
+            Console.SetCursorPosition(0, 0);
             for (uint i = 1; i <= count; i++)
             {
                 joysticks.Add(Joystick.createJoystick(i));
@@ -20,13 +23,6 @@ namespace sdl_wrapper_test
             {
                 Console.WriteLine(joystick.GetJoystickName());
             }
-            bool events = Wrapper.SDL_JoystickEventsEnabled();
-            if (events)
-            {
-                Console.WriteLine("Events Enabled");
-            }
-
-            Console.WriteLine(joysticks[0].Buttons.Count);
 
             int j = 0;
 
@@ -37,8 +33,8 @@ namespace sdl_wrapper_test
 
                 for (int i = 0; i < axes.Count; i++)
                 {
-                    Console.SetCursorPosition(0, i + 6);
-                    Console.Write($"Axis {i}: {axes[i]}");
+                    Console.SetCursorPosition(0, i + 4);
+                    Console.Write($"Axis {i}: {axes[i]}".PadRight(14));
                 }
 
                 List<bool> buttons = joysticks[0].Buttons;
@@ -49,16 +45,16 @@ namespace sdl_wrapper_test
                     {
                         j++;
                     }
-                    Console.SetCursorPosition(j * 18 + 16, i % 10 + 6);
-                    Console.Write($"Button {i}: {buttons[i]}");
+                    Console.SetCursorPosition(j * 18 + 16, i % 10 + 4);
+                    Console.Write($"Button {i}: {buttons[i]}".PadRight(16));
                 }
 
                 axes = joysticks[2].Axes;
 
                 for (int i = 0; i < axes.Count; i++)
                 {
-                    Console.SetCursorPosition(0, i + 17);
-                    Console.Write($"Axis {i}: {axes[i]}");
+                    Console.SetCursorPosition(0, i + 15);
+                    Console.Write($"Axis {i}: {axes[i]}".PadRight(14));
                 }
 
                 buttons = joysticks[2].Buttons;
@@ -69,8 +65,8 @@ namespace sdl_wrapper_test
                     {
                         j++;
                     }
-                    Console.SetCursorPosition(j * 18 + 16, i % 10 + 17);
-                    Console.Write($"Button {i}: {buttons[i]}");
+                    Console.SetCursorPosition(j * 18 + 16, i % 10 + 15);
+                    Console.Write($"Button {i}: {buttons[i]}".PadRight(16));
                 }
 
                 j++;
@@ -83,8 +79,8 @@ namespace sdl_wrapper_test
                     {
                         j++;
                     }
-                    Console.SetCursorPosition(j * 18 + 16, i % 10 + 17);
-                    Console.Write($"Hat {i}: {hats[i]}");
+                    Console.SetCursorPosition(j * 18 + 16, i % 10 + 15);
+                    Console.Write($"Hat {i}: {hats[i]}".PadRight(24));
                 }
 
             }
