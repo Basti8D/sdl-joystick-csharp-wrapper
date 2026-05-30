@@ -6,6 +6,11 @@
     <RootNamespace>sdl_wrapper_test</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\sdl-wrapper-lib\sdl-wrapper-lib.csproj" />
+  </ItemGroup>
 
 </Project>

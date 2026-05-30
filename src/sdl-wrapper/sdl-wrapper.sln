@@ -1,9 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4 d17.14
+VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sdl-wrapper-lib", "sdl-wrapper-lib\sdl-wrapper-lib.csproj", "{DFC44ED3-ED6B-C0E6-97FF-5883A8191A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sdl-wrapper-test", "sdl-wrapper-test\sdl-wrapper-test.csproj", "{8B475278-1F2F-287B-FAC1-09908E6E22BB}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFC44ED3-ED6B-C0E6-97FF-5883A8191A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC44ED3-ED6B-C0E6-97FF-5883A8191A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC44ED3-ED6B-C0E6-97FF-5883A8191A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC44ED3-ED6B-C0E6-97FF-5883A8191A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B475278-1F2F-287B-FAC1-09908E6E22BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B475278-1F2F-287B-FAC1-09908E6E22BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B475278-1F2F-287B-FAC1-09908E6E22BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B475278-1F2F-287B-FAC1-09908E6E22BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
