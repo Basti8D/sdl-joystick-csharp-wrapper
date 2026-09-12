@@ -1,13 +1,19 @@
 ﻿using sdl_wrapper_lib;
+using System.Threading.Tasks;
+using System.Windows.Data;
 
 namespace sdl_wrapper_test
 {
     internal class Program
     {
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.CursorVisible = false;
+            
+            int stickIndex = 1;
+            int throtleIndex = 0;
+
             List<Joystick> joysticks;
             joysticks = new List<Joystick>();
             Joystick.InitJoystickSystem();
@@ -29,7 +35,7 @@ namespace sdl_wrapper_test
             while (true)
             {
                 
-                List<short> axes = joysticks[0].Axes;
+                List<short> axes = joysticks[throtleIndex].Axes;
 
                 for (int i = 0; i < axes.Count; i++)
                 {
@@ -37,7 +43,7 @@ namespace sdl_wrapper_test
                     Console.Write($"Axis {i}: {axes[i]}".PadRight(14));
                 }
 
-                List<bool> buttons = joysticks[0].Buttons;
+                List<bool> buttons = joysticks[throtleIndex].Buttons;
                 j = 0;
                 for (int i = 0; i < buttons.Count; i++)
                 {
@@ -49,7 +55,7 @@ namespace sdl_wrapper_test
                     Console.Write($"Button {i}: {buttons[i]}".PadRight(16));
                 }
 
-                axes = joysticks[2].Axes;
+                axes = joysticks[stickIndex].Axes;
 
                 for (int i = 0; i < axes.Count; i++)
                 {
@@ -57,7 +63,7 @@ namespace sdl_wrapper_test
                     Console.Write($"Axis {i}: {axes[i]}".PadRight(14));
                 }
 
-                buttons = joysticks[2].Buttons;
+                buttons = joysticks[stickIndex].Buttons;
                 j = 0;
                 for (int i = 0; i < buttons.Count; i++)
                 {
@@ -71,7 +77,7 @@ namespace sdl_wrapper_test
 
                 j++;
 
-                List<Joystick.SDLHat> hats = joysticks[2].GetJoystickHats();
+                List<Joystick.SDLHat> hats = joysticks[stickIndex].GetJoystickHats();
 
                 for (int i = 0; i < hats.Count; i++)
                 {
@@ -82,7 +88,6 @@ namespace sdl_wrapper_test
                     Console.SetCursorPosition(j * 18 + 16, i % 10 + 15);
                     Console.Write($"Hat {i}: {hats[i]}".PadRight(24));
                 }
-
             }
         }
     }
