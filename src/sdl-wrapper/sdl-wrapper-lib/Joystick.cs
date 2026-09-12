@@ -33,10 +33,6 @@ namespace sdl_wrapper_lib
             {
                 return GetJoystickAxes();
             }
-            private set
-            {
-                Axes = value;
-            }
         }
         public List<bool> Buttons
         {
@@ -44,7 +40,7 @@ namespace sdl_wrapper_lib
             {
                 return GetJoystickButtons();
             }
-        }
+        }  
         private static string CastPtrToString(IntPtr ptr)
         {
             return Marshal.PtrToStringAnsi(ptr);
@@ -94,8 +90,6 @@ namespace sdl_wrapper_lib
             }
             return axes;
         }
-
-
 
         public bool GetJoysickButton(int button)
         {
