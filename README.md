@@ -1,3 +1,3 @@
 # sdl-joystick-csharp-wrapper
 
-This Project was created to use my current HOTAS (hands on throttle-and-stick) to control different parts of my Windows system. I built it because I thought it would be cool to control my volume with the throttle. Additionally, the functionality to control the mouse is already present, so I asked myself why there wasn't a function to open apps and perform other actions like you can with a StreamDeck.
+This project was created to use my current HOTAS (hands on throttle-and-stick) to control different parts of my Windows system. I built it because I thought it would be cool to control my volume with the throttle. Additionally, the functionality to control the mouse is already present, so I asked myself why there wasn't a function to open apps and perform other actions like you can with a StreamDeck.
